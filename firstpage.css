@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {}
+
+.logoo {
+    width: 262px;
+    aspect-ratio: 4/1;
+}
+
+.nav-link {
+    padding: 25px;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-weight: bold;
+    background-image: url('https://t3.ftcdn.net/jpg/05/71/06/76/360_F_571067620_JS5T5TkDtu3gf8Wqm78KoJRF1vobPvo6.jpg');
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.carousel-item img {
+    height: 90vh;
+    object-fit: cover;
+    background-size: contain;
+}
+
+.button-85 {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-85:before {
+    content: "";
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.button-85:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.carousel,
+.navbar {
+    border: 1px solid rgb(0, 229, 255);
+    border-radius: 5px;
+
+}
+
+.navbar {
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    position: fixed;
+}
+
+.carousel {
+
+    z-index: 1;
+}
+
+.log {
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+.log:hover {}
+
+.icon {
+    display: none;
+}
+
+input {
+
+    border-radius: 10px;
+    margin-left: 5px;
+    box-sizing: border-box;
+    width: 12vh;
+    background-color: antiquewhite;
+}
+
+input::placeholder {
+    padding: 3px;
+    color: red;
+
+}
+
+.nav-link:hover {
+
+    transform: translateY(-5px);
+
+    color: transparent;
+    text-shadow: 0 0 10px rgba(244, 4, 196, 0.942);
+
+}
+
+.profile {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    border: 2px solid rgb(88, 93, 70);
+    margin-left: -100px;
+    display: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    background-image: url('https://img.freepik.com/free-photo/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products_1258-54646.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1713398400&semt=ais');
+    background-position: center;
+
+}
+
+.profile a {
+    text-decoration: none;
+    color: #111;
+
+}
+
+#dbutton {
+    margin: 10px 0px 0px 35px;
+    width: 50px;
+    border-radius: 20px;
+    background-color: #111;
+    color: white;
+
+}
+
+#lbutton {
+    width: 50px;
+    border-radius: 20px;
+
+}
+
+.container-fluid {
+
+
+    padding: 10px;
+
+    box-sizing: border-box;
+    background-size: contain;
+
+
+
+
+}
+
+.row img {
+    height: 290px;
+    width: 220px;
+
+    border: 2px solid rgb(190, 237, 6);
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0%;
+    margin: 5px;
+
+}
+
+.col {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 220px;
+}
+
+.slidebar11 {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border: 1px solid blueviolet;
+    scroll-behavior: smooth;
+}
+
+.scroll {
+    padding: 5px;
+}
+
+.slider-btn1 {
+    position: absolute;
+    margin-top: -100px;
+
+    border-radius: 50%;
+    width: 35px;
+    height: 30px;
+    border: none;
+    background-color: rgb(19, 158, 227);
+
+}
+
+.slider-btn-left1 {
+    left: 15px;
+}
+
+.slider-btn-right1 {
+    right: 20px;
+}
