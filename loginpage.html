@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<style>
+    *{
+        box-sizing:border-box;
+        margin:0px 0px 10px 0px;
+        padding:0;
+        color:white;
+    }
+    body{
+        background-image:url('https://images.hdqwalls.com/download/dark-night-beautiful-sky-nl-3840x2400.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height:100vh;
+        min-width:100vw;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        
+    }
+    .form{
+        justify-content:center;
+        align-items:center;
+        position:relative; 
+        padding:30px;
+        border:2px solid white;
+        border-radius:20px;
+        backdrop-filter: blur(10px);
+    }
+    h1{
+        font-size:35px;
+        color:white;
+        text-align: center;
+        margin-bottom:15px;
+    }
+    .user{
+        text-align: center;
+    }
+    .pss{
+        text-align:center;
+    }
+    #in{
+        border:2px solid white;
+        font-size:15px;
+        border-radius:30px;
+        padding:10px;
+        width:270px;
+        background: transparent;
+        height:40px;
+        margin-left:17px;
+    }
+    button{
+        font-size:15.5px;
+        border-radius:30px;
+        padding:5px;
+        width:270px;
+        color:black;
+        background-color:white;
+        text-align:center;
+        height:40px;
+        font-weight:300px;
+        font-weight: bold;
+        margin-left:18px;
+        border:none;
+    }
+    .rem{
+        justify-content: space-between;
+        margin-left:13px;
+    }
+    a{
+        text-decoration:none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    .reg{
+        text-align:center;
+       
+    }
+    .regr{
+       margin-right:7px;
+        font-weight:bold;
+    }
+    #icon{
+        position:relative;
+        right:37px;
+        top:6px;
+    }
+</style>
+<body>
+    <div class="form">
+        <form action="">
+            <h1>Login</h1>
+            <div class="user">
+               <label> <input type="text" placeholder="Username" color="white" required id="in">
+                <box-icon type='solid' name='user' id="icon" color="white"></box-icon></label>
+            </div>
+            <div class="pss">
+                <label><input type="password" placeholder="Password" minlength="8"required id="in"><box-icon name='lock' id="icon" color="white"></box-icon></label>
+            </div>
+            <div class="rem">
+                <label style=" margin-right:52px;"><input type="checkbox" style="border: none;">Remember Me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button>Login</button>
+            <div class="reg">Don't have an account?<a href="#" class="regr">Register</a></div>
+            
+        </form>
+    </div>
+</body>
+</html>
