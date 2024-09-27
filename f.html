@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Adventure</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        /* Set a uniform height for all images */
+        .zoomable {
+            object-fit: cover;
+            width: 100%;
+            height: 200px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5 p-5 bg-light text-dark">
+        <h1 class="text-center mb-4">
+            It’s Time For a New Adventure! Don’t Wait Any Longer. Contact us!
+        </h1>
+        <div class="text-center">
+            <button class="btn btn-primary mb-4">BOOK DESTINATION</button>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2 class="h5 fw-bold">Voyage</h2>
+                <p>
+                    <img aria-hidden="true" alt="phone" src="https://openui.fly.dev/openui/24x24.svg?text=📞"
+                        class="me-2" />
+                    +919569938191
+                </p>
+                <p>
+                    <img aria-hidden="true" alt="address" src="https://openui.fly.dev/openui/24x24.svg?text=📍"
+                        class="me-2" />
+                    184 Main Street West Victoria 8007
+                </p>
+                <p>
+                    <img aria-hidden="true" alt="clock" src="https://openui.fly.dev/openui/24x24.svg?text=🕒"
+                        class="me-2" />
+                    Mon - Sat 8:00 - 18:00 Sunday CLOSED
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <h2 class="h5 fw-bold">Latest News</h2>
+                <ul class="list-unstyled">
+                    <li>
+                        Water & Rocks: Discovering the Beauty of New Zealand
+                        <span class="text-muted">05.04.2016</span>
+                    </li>
+                    <li>
+                        Updates: People Who Work Overseas and Fly For Free
+                        <span class="text-muted">05.04.2016</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h2 class="h5 fw-bold">Gallery</h2>
+                <div class="row g-2">
+                    <div class="col-6">
+                        <img src="./images/dayarabugyal1.jpg" alt="Gallery Image 1" class="img-fluid zoomable" />
+                    </div>
+                    <div class="col-6">
+                        <img src="./images/fdayarabugyal.jpg" alt="Gallery Image 2" class="img-fluid zoomable" />
+                    </div>
+                    <div class="col-6">
+                        <img src="./images/fgoa.jpg" alt="Gallery Image 3" class="img-fluid zoomable" />
+                    </div>
+                    <div class="col-6">
+                        <img src="./images/fmanali.jpg" alt="Gallery Image 4" class="img-fluid zoomable" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 mt-4">
+                <h2 class="h5 fw-bold">Follow Us</h2>
+                <p class="text-muted">Couldn't connect with Twitter</p>
+            </div>
+        </div>
+
+        <footer class="text-center mt-4 text-muted">
+            © 2016 Qode Interactive, All Rights Reserved
+        </footer>
+    </div>
+
+    <!-- Modal to display zoomed image -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body position-relative text-center">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 p-3" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    <img id="modalImage" src="" class="img-fluid" alt="Zoomed Image" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (Popper.js, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Select all images with the class 'zoomable'
+        document.querySelectorAll('.zoomable').forEach(img => {
+            img.addEventListener('click', function () {
+                // Set the image source of the modal image
+                document.getElementById('modalImage').src = this.src;
+                // Show the modal
+                var myModal = new bootstrap.Modal(document.getElementById('imageModal'));
+                myModal.show();
+            });
+        });
+    </script>
+</body>
+
+</html>
