@@ -16,38 +16,37 @@
             margin-bottom: 20px;
         }
 
-        .tour-card {
+        .tour-item {
             transition: transform 0.2s;
             margin-bottom: 20px;
-            /* Add margin between cards */
         }
 
-        .tour-card:hover {
+        .tour-item:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .card {
+        .tour-card-container {
             border: none;
             border-radius: 10px;
             overflow: hidden;
         }
 
-        .card img {
+        .tour-card-container img {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
         }
 
-        .card-body {
+        .tour-card-body {
             background-color: #ffffff;
             border-radius: 0 0 10px 10px;
         }
 
-        .card-title {
+        .tour-card-title {
             color: #343a40;
         }
 
-        .card-text {
+        .tour-card-text {
             color: #6c757d;
         }
 
@@ -82,41 +81,41 @@
         </div>
 
         <div class="row" id="tour-cards">
-            <div class="col-md-4 tour-card budget">
-                <div class="card">
+            <div class="col-md-4 tour-item budget">
+                <div class="tour-card-container">
                     <img class="card-img-top" src="https://placehold.co/600x400?text=Tower+Bridge"
                         alt="Taste of Britain">
-                    <div class="card-body">
-                        <h5 class="card-title">Taste of Britain</h5>
-                        <p class="card-text">7.7 Superb</p>
-                        <p class="card-text font-weight-bold">$1180</p>
-                        <p class="card-text">7 Days</p>
-                        <p class="card-text">12+</p>
+                    <div class="tour-card-body">
+                        <h5 class="tour-card-title">Taste of Britain</h5>
+                        <p class="tour-card-text">7.7 Superb</p>
+                        <p class="tour-card-text font-weight-bold">$1180</p>
+                        <p class="tour-card-text">7 Days</p>
+                        <p class="tour-card-text">12+</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 tour-card escorted">
-                <div class="card">
+            <div class="col-md-4 tour-item escorted">
+                <div class="tour-card-container">
                     <img class="card-img-top" src="https://placehold.co/600x400?text=Venice"
                         alt="The Venice Experience">
-                    <div class="card-body">
-                        <h5 class="card-title">The Venice Experience</h5>
-                        <p class="card-text">7.0 Superb</p>
-                        <p class="card-text font-weight-bold">$1360</p>
-                        <p class="card-text">14 Days</p>
-                        <p class="card-text">12+</p>
+                    <div class="tour-card-body">
+                        <h5 class="tour-card-title">The Venice Experience</h5>
+                        <p class="tour-card-text">7.0 Superb</p>
+                        <p class="tour-card-text font-weight-bold">$1360</p>
+                        <p class="tour-card-text">14 Days</p>
+                        <p class="tour-card-text">12+</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 tour-card recommended">
-                <div class="card">
+            <div class="col-md-4 tour-item recommended">
+                <div class="tour-card-container">
                     <img class="card-img-top" src="https://placehold.co/600x400?text=Taiwan" alt="Taiwan Land Tour">
-                    <div class="card-body">
-                        <h5 class="card-title">Taiwan Land Tour</h5>
-                        <p class="card-text">6.7 Good</p>
-                        <p class="card-text font-weight-bold">$2120</p>
-                        <p class="card-text">14 Days</p>
-                        <p class="card-text">12+</p>
+                    <div class="tour-card-body">
+                        <h5 class="tour-card-title">Taiwan Land Tour</h5>
+                        <p class="tour-card-text">6.7 Good</p>
+                        <p class="tour-card-text font-weight-bold">$2120</p>
+                        <p class="tour-card-text">14 Days</p>
+                        <p class="tour-card-text">12+</p>
                     </div>
                 </div>
             </div>
@@ -125,14 +124,12 @@
 
     <script>
         function filterTours(category) {
-            const cards = document.querySelectorAll('.tour-card');
+            const cards = document.querySelectorAll('.tour-item');
 
             cards.forEach(card => {
-                // Show all cards if 'all' is selected
                 if (category === 'all') {
                     card.classList.remove('hidden');
                 } else {
-                    // Check if the card belongs to the selected category
                     if (card.classList.contains(category)) {
                         card.classList.remove('hidden');
                     } else {
