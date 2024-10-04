@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            /* Background color */
+            color: #1e1e1e;
+            /* Text color */
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        button {
+            background-color: #1e3a8a;
+            /* Primary color */
+            color: #ffffff;
+            /* Text color */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+            /* Darker shade on hover */
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            /* Single column by default */
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+                /* Three columns on medium and larger screens */
+            }
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: semi-bold;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 8px;
+            color: #4b5563;
+            /* Muted text color */
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            /* Rounded corners for images */
+        }
+
+        footer {
+            margin-top: 32px;
+            text-align: center;
+            color: #4b5563;
+            /* Muted text color */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>It’s Time For a New Adventure! Don’t Wait Any Longer. Contact us!</h1>
+        <button>BOOK DESTINATION</button>
+        <div class="grid">
+            <div>
+                <h2>Voyage</h2>
+                <p>Nullam ac justo efficitur, tristique ligula. Lorem Ipsum gravida nibh vel velit auctor aliquet.
+                    Aenean sollicitudin.</p>
+                <p>📞 1-677-124-44227</p>
+                <p>📍 184 Main Street West Victoria 8007</p>
+                <p>🕒 Mon - Sat 8.00 - 18.00 Sunday CLOSED</p>
+            </div>
+
+            <div>
+                <h2>Latest News</h2>
+                <ul>
+                    <li>Water & Rocks: Discovering the Beauty of New Zealand <span
+                            style="color: #4b5563;">05.04.2016</span></li>
+                    <li>Updates: People Who Work Overseas and Fly For Free <span
+                            style="color: #4b5563;">05.04.2016</span></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Gallery</h2>
+                <div class="gallery">
+                    <img src="https://openui.fly.dev/openui/150x150.svg?text=Gallery%20Image%201"
+                        alt="Gallery Image 1" />
+                    <img src="https://openui.fly.dev/openui/150x150.svg?text=Gallery%20Image%202"
+                        alt="Gallery Image 2" />
+                    <img src="https://openui.fly.dev/openui/150x150.svg?text=Gallery%20Image%203"
+                        alt="Gallery Image 3" />
+                    <img src="https://openui.fly.dev/openui/150x150.svg?text=Gallery%20Image%204"
+                        alt="Gallery Image 4" />
+                </div>
+            </div>
+
+            <div>
+                <h2>Follow Us</h2>
+                <p class="text-muted-foreground">Couldn't connect with Twitter</p>
+            </div>
+        </div>
+        <footer>
+            <p>© 2016 Qode Interactive, All Rights Reserved</p>
+        </footer>
+    </div>
+</body>
+
+</html>
