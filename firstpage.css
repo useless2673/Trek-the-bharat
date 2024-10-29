@@ -28,7 +28,7 @@ body {
 }
 
 .carousel-item img {
-  height: 102vh;
+  height: 90vh;
   object-fit: cover;
   background-size: contain;
 }
@@ -62,9 +62,10 @@ body {
     rgba(44, 187, 99, 0.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
+
 .carousel,
 .navbar {
-  border: 1px solid rgb(0, 229, 255);
+  /* border: 1px solid rgb(0, 229, 255); */
   border-radius: 5px;
 }
 
@@ -110,6 +111,28 @@ input::placeholder {
 
   color: transparent;
   text-shadow: 0 0 10px rgba(244, 4, 196, 0.942);
+}
+
+.profile1 {
+  position: absolute;
+  width: 490px;
+  height: 270px;
+  border: 2px solid rgb(88, 93, 70);
+  margin-left: -350px;
+  display:none ;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  background-image: url("https://img.freepik.com/free-photo/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products_1258-54646.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1713398400&semt=ais");
+  background-position: center;
+ 
+}
+
+.profile1 a {
+  text-decoration: none;
+  color: #334447;
+ 
+
 }
 
 .profile {
@@ -203,11 +226,13 @@ input::placeholder {
 .row {
   padding: 10px;
 }
+
 .footer3 {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
+
 .col-3 {
   border: 2px solid red;
 }
@@ -218,6 +243,7 @@ input::placeholder {
   color: #111;
   background-color: #00ffd5;
 }
+
 .down-col a {
   text-decoration: none;
   display: block;
@@ -285,6 +311,7 @@ input::placeholder {
     transform: translateY(0);
   }
 }
+
 .carousel-item.active .carousel-caption h1 {
   animation-delay: 0.4s;
 }
@@ -299,6 +326,7 @@ input::placeholder {
   height: 200px;
   cursor: pointer;
 }
+
 .footerimg {
   width: 24px;
   height: 24px;
@@ -349,51 +377,80 @@ input::placeholder {
   margin-bottom: 20px;
 }
 
-.tour-item {
-  transition: transform 0.2s;
-  margin-bottom: 20px;
-}
+        .tour-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
+        }
 
-/* .tour-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(160, 88, 88, 0.1);
-  background-color: #e0e7ed;
-  width: 200;
-  height: auto;
-  border-radius:43px;
-} */
+        .tour-item:hover {
+            transform: translateY(-10px);
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 25px;
+        }
 
-.tour-card-container {
-  border: none;
-  border-radius: 22px;
-  overflow: hidden;
-  background-color: #e0e7ed;
-}
+        .tour-card-container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            border: none;
+        }
 
-.tour-card-container img {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  height: 271px;
-  width: 410px;
-  border: 0px;
-  display: flex;
-  flex-wrap: nowrap;
-  padding: 0%;
-  margin: 0px;
-}
+        .tour-card-container img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
 
-.tour-card-body {
-  background-color: #e0e7ed;
-  border-radius: 0 0 10px 10px;
-}
+        .tour-card-body {
+            padding: 20px;
+            background-color: #ffffff;
+        }
 
-.tour-card-title {
-  color: #343a40;
-}
+        .tour-card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333333;
+            margin: 0;
+        }
 
-.tour-card-text {
-  color: #6c757d;
-}
+        .tour-card-rating,
+        .tour-card-price {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .tour-card-text {
+            color: #555;
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        .tour-card-price {
+            color: #e63946;
+            font-weight: bold;
+        }
+
+        .tour-card-days {
+            font-size: 0.85rem;
+            color: #3a4a58;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (min-width: 576px) {
+            .tour-item {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .tour-item {
+                margin-bottom: 40px;
+            }
+        }
 
 .btn {
   border-radius: 20px;
@@ -438,6 +495,7 @@ input::placeholder {
   from {
     transform: translate(-50%, 100%);
   }
+
   to {
     transform: translate(-50%, -120%);
   }
@@ -462,6 +520,7 @@ input::placeholder {
   width: auto;
   height: auto;
 }
+
 .navbar {
   position: sticky;
   top: 0;
@@ -491,15 +550,18 @@ input::placeholder {
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 .day {
   margin-bottom: 20px;
 }
+
 .day h2 {
   background: #007bff;
   color: #fff;
   padding: 10px;
   border-radius: 5px;
 }
+
 .meal {
   font-weight: bold;
 }
@@ -547,30 +609,49 @@ li {
 }
 
 .gallery img {
-  border-radius: 8px; /* Rounded corners for images */
+  border-radius: 8px;
+  /* Rounded corners for images */
 }
-.footerimage img{
+
+.footerimage img {
   width: 92px;
   height: 92px;
   margin: -6px;
   padding: 4px;
   border: 1px solid whitesmoke;
 }
-.footer-section1{
+
+.footer-section1 {
   background-color: #575656;
   color: white;
   margin: 0px 0px -24px 0px;
-  
 }
-footer{
+
+footer {
   background-color: #070707;
-  
- 
 }
-footer p{
-  color:white;
+
+footer p {
+  color: white;
   padding: 20px;
-  
-
 }
 
+.centered-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.tabs-wrapper {
+  width: 100%;
+  max-width: 800px;
+  border: 5px solid red;
+}
+
+.tab-content {
+  height: 500px;
+  overflow-y: auto;
+  width: auto;
+  padding: 20px;
+}

@@ -553,7 +553,15 @@
         </div>
     </div>
     <!--tab section end here -->
-
+<script>
+    // Add event listener for tab changes
+    document.querySelectorAll('.nav-link').forEach(function (tabButton) {
+        tabButton.addEventListener('shown.bs.tab', function () {
+            // Scroll the tab content container to the top
+            document.querySelector('.tab-content').scrollTop = 0;
+        });
+    });
+</script>
 
     <script>
         document.querySelectorAll('.img-clickable').forEach(image => {
@@ -656,22 +664,23 @@
     </footer>
 
     <!-- Image Modals -->
-    <div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel1"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imageModalLabel1">Gallery Image 1</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="./images/fgoa.jpg" alt="Gallery Image 1" class="img-fluid" />
-                </div>
+<div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel1"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel1"></h5>
+                <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close" >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="./images/fgoa.jpg" alt="Gallery Image 1" class="img-fluid" />
             </div>
         </div>
     </div>
+</div>
+
 
     <div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel2"
         aria-hidden="true">

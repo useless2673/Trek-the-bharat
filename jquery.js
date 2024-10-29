@@ -11,12 +11,35 @@ $(document).ready(function () {
         $('.profile').css("display", "none")
     });
 
+
+
+    $('.tre').mouseenter(function () {
+        $('.profile1').css("display", "block")
+    });
+
+    $('.profile1').mouseenter(function () {
+        $('.profile1').css("display", "block")
+    });
+
+    $('.tre,.profile1').mouseleave(function () {
+        $('.profile1').css("display", "none")
+    });
+
+
+
+
     $('#dbutton').click(function () {
         $('body').css("color", "white");
         $('body').css("background-color", "black");
         $('.nav-link').css("color", "white");
+        $('.nav-tabs').css("background-color", "black");
+       
         $('.navbar').css("background", "black");
-        $('.log').attr("src", "https://thumbs.dreamstime.com/b/user-icon-linear-gray-background-106603449.jpg")
+        $('.log').attr("src", "https://thumbs.dreamstime.com/b/user-icon-linear-gray-background-106603449.jpg");
+         $('.book-now-section').css("color", "white");
+        $('.book-now').css("background-color", "black");
+         $('.textcolor').css("color", "white");
+
 
     });
 
