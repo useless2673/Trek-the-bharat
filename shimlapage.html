@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="first.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.min.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" href="firstpage.css">
+    <script src="jquery.js"></script>
+    <title>Goa Beach</title>
+</head>
+
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="firstpage.html">
+            <img class="img-fluid logoo" src="./images/newlogo.png" alt="mylogo">
+        </a>
+        <button type="button" class="navbar-toggler d-lg-none" data-bs-toggle="collapse" data-bs-target="#demo">
+            <span><box-icon name='menu' flip='horizontal' animation='tada' color='#0d29e0'></box-icon></span>
+        </button>
+        <div class="collapse navbar-collapse nav1 justify-content-center d-lg-block" id="demo">
+            <a class="nav-link " href="firstpage.html">Home</a>
+            <a class="nav-link" href="firstpage.html">About Us</a>
+            <a class="nav-link" href="firstpage.html">Gallery</a>
+            <div class="nav-link tre" href="firstpage.html">Trek
+
+                <div class="profile1 ">
+                    <div class="container-fluid ">
+                        <div class="row" style="align-items: center;">
+                            <div class="col"><a href="manalipage.html" style="color: white;">Manali</a></div>
+                            <div class="col"><a href="goapage.html" style="color: white;">Goa</a></div>
+                            <div class="col"><a href="vanarashpage.html" style="color: white;">Vanarasi</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><a href="shimlapage.html" style="color: white;">Shimla</a></div>
+                            <div class="col"><a href="kedarnathpage.html" style="color: white;">Kedarnath</a></div>
+                            <div class="col"><a href="jaisalmerpage.html" style="color: white;">Jaisalmer</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-8"><a href="tungnathpage.html" style="color: white;">Tungnath</a></div>
+                            <div class="col-4"><a href="srinagarpage.html" style="color: white;">Srinagar</a></div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-8"><a href="lehladhakpage.html" style="color: white;">Leh ladhak</a></div>
+                            <div class="col-4"><a href="dayarabugyalpage.html" style="color: white;">Dayara bugyal</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <a class="nav-link" href="firstpage.html">Contact Us</a>
+            <div data-bs-toggle="tooltip" data-bs-placement="top" title="Login"><img class=" img-fluid d-lg-block log"
+                    style="max-width: 100%;"
+                    src="https://pic.onlinewebfonts.com/thumbnails/animations_258083.svg?width=12" alt="">
+                <div class="profile ">
+                    <box-icon type='solid' name='right-arrow-circle'></box-icon><span
+                        style="font-weight: bold;font-size:16px;color:rgb(27, 26, 26)"><a href="loginpage.html">login or
+                            sign
+                            up?</a></span>
+                    <br>
+                    <hr>
+                    <box-icon name='sun' type='solid'></box-icon><span
+                        style="font-weight: bold;font-size:16px;color:rgb(27, 26, 26);display:inline">Appearance</span>
+                    <br>
+                    <button type="button" id="dbutton">dark</button>
+                    <button type="button" id="lbutton">light</button>
+                    <br>
+                    <br>
+                    <hr>
+                    <div id="gtrans"></div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!--nav bar end here-->
+    <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+
+
+    <div class="banner-container position-relative">
+        <img src="./images/goabanner.jpeg" alt="goabanner" class="banner-image">
+        <div class="overlay-text">Welcome to Goa!</div> <!-- New text overlay -->
+    </div>
+
+
+
+
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-lg-8">
+
+                <ul class="nav nav-tabs mt-4" id="tourTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info"
+                            type="button" role="tab" aria-controls="info" aria-selected="true">Information</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="plan-tab" data-bs-toggle="tab" data-bs-target="#plan" type="button"
+                            role="tab" aria-controls="plan" aria-selected="false">Tour Plan</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location"
+                            type="button" role="tab" aria-controls="location" aria-selected="false">Location</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery"
+                            type="button" role="tab" aria-controls="gallery" aria-selected="false">Gallery</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews"
+                            type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews</button>
+                    </li>
+                </ul>
+
+
+                <div class="tab-content mt-3" id="tourTabContent" style="display: block; text-align:justify">
+
+                    <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+                        <!--start from here -->
+                        <h2 class="fw-bold textcolor">Shimla Adventures</h2>
+                        <span class="h4 plantext">₹ 9999<small class="plantext">/ per person</small> &nbsp; &nbsp;
+                            &nbsp; &nbsp;&nbsp;<small style="color: rgb(237, 29, 6); float: inline-end">3 days/2 Nights</small></span>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="mountain-section">
+                            <h1 class="plantext">Shimla Trekking Experiences</h1>
+                        
+                            <div class="mountain">
+                                <h2 class="plantext">1. Jakhoo Hill Trek</h2>
+                                <p class="overview"><strong>Overview:</strong> The Jakhoo Hill trek offers stunning panoramic views of the
+                                    Shimla city and the surrounding mountains.</p>
+                                <p class="trek-experience"><strong>Trekking Experience:</strong> <br>
+                                    <em>Scenic Trails:</em> The trek takes you through lush pine forests, with opportunities to see local
+                                    wildlife and enjoy the serene environment.<br>
+                                    <em>Cultural Heritage:</em> Visit the ancient Jakhoo Temple, dedicated to Lord Hanuman, located at the
+                                    summit.
+                                </p>
+                                <p class="attractions backtext"><strong>Other Attractions:</strong> Photography, nature walks, and exploring
+                                    local flora and fauna.</p>
+                            </div>
+                        
+                            <div class="mountain">
+                                <h2 class="plantext">2. Shali Tibba Trek</h2>
+                                <p class="overview"><strong>Overview:</strong> The Shali Tibba trek is a moderate trek that takes you to the
+                                    highest peak in the Shimla district, offering breathtaking views.</p>
+                                <p class="trek-experience"><strong>Trekking Experience:</strong> <br>
+                                    <em>Mountain Trails:</em> This trek provides an exhilarating experience through beautiful landscapes, and
+                                    you can witness the stunning sunset from the peak.<br>
+                                    <em>Cultural Interaction:</em> Interact with local villagers and experience their traditional way of life
+                                    along the trek.
+                                </p>
+                                <p class="attractions backtext"><strong>Other Attractions:</strong> Local cuisine, village culture, and stunning
+                                    panoramic views.</p>
+                            </div>
+                        
+                            <div class="mountain">
+                                <h2 class="plantext">3. Mashobra Trek</h2>
+                                <p class="overview"><strong>Overview:</strong> The Mashobra trek is a beautiful excursion through apple orchards
+                                    and cedar forests, ideal for nature lovers.</p>
+                                <p class="trek-experience"><strong>Trekking Experience:</strong> <br>
+                                    <em>Orchard Trails:</em> Trek through scenic trails lined with apple and cherry trees, experiencing the
+                                    beauty of the region’s biodiversity.<br>
+                                    <em>Peaceful Retreat:</em> Enjoy the tranquility of the hills and the refreshing atmosphere away from the
+                                    bustling city.
+                                </p>
+                                <p class="attractions backtext"><strong>Other Attractions:</strong> Fruit picking (in season), photography, and
+                                    exploring local flora.</p>
+                            </div>
+                        
+                            <div class="mountain">
+                                <h2 class="plantext">4. Kufri Trek</h2>
+                                <p class="overview"><strong>Overview:</strong> The Kufri trek is a popular route that takes you to Kufri, known
+                                    for its stunning views and adventure activities.</p>
+                                <p class="trek-experience"><strong>Trekking Experience:</strong> <br>
+                                    <em>Adventure Awaits:</em> This trek offers thrilling opportunities for activities like horse riding and
+                                    skiing during winter months.<br>
+                                    <em>Scenic Views:</em> Experience breathtaking views of the surrounding mountains and valleys, perfect for
+                                    photography.
+                                </p>
+                                <p class="attractions backtext"><strong>Other Attractions:</strong> Adventure sports, local markets, and
+                                    cultural experiences.</p>
+                            </div>
+                        </div>
+
+                        <!--endhere info part-->
+                    </div>
+
+
+                    <div class="tab-pane fade plantext" id="plan" role="tabpanel" aria-labelledby="plan-tab">
+                        <!--plan start here-->
+                        <div class="timeline plantext">
+                            <div class="timeline-item">
+                                <div class="timeline-circle">1</div>
+                                <div class="timeline-content">
+                                    <h2 class="plantext">Day 1: Arrival in Shimla</h2>
+                                    <p><strong>Morning:</strong> Arrive at Shimla Airport or the bus station. Transfer to your hotel for
+                                        check-in and freshening up.</p>
+                                    <p><strong>Afternoon:</strong> Enjoy lunch at the hotel or a local café. Suggested: Café Simla Times.</p>
+                                    <p><strong>Evening:</strong> Visit the Mall Road for shopping, local handicrafts, and enjoying the vibrant
+                                        atmosphere.</p>
+                                    <p class="meal"><strong>Dinner:</strong> Savor delicious Himachali cuisine at a local restaurant.</p>
+                                </div>
+                            </div>
+                        
+                            <div class="timeline-item">
+                                <div class="timeline-circle">2</div>
+                                <div class="timeline-content">
+                                    <h2 class="plantext">Day 2: Kufri and Mashobra Excursion</h2>
+                                    <p><strong>Morning:</strong> Breakfast at the hotel. Depart for Kufri, known for its scenic views and
+                                        adventure activities.</p>
+                                    <p><strong>Afternoon:</strong> Arrive at Kufri. Enjoy lunch at a local eatery, followed by activities like
+                                        horse riding or visiting the Himalayan Nature Park.</p>
+                                    <p><strong>Evening:</strong> Visit Mashobra, a quieter area near Shimla, and take a leisurely walk through
+                                        the apple orchards.</p>
+                                    <p class="meal"><strong>Dinner:</strong> Dinner at your hotel, enjoying local flavors.</p>
+                                </div>
+                            </div>
+                        
+                            <div class="timeline-item">
+                                <div class="timeline-circle">3</div>
+                                <div class="timeline-content">
+                                    <h2 class="plantext">Day 3: Local Sightseeing</h2>
+                                    <p><strong>Morning:</strong> Early breakfast. Begin your local sightseeing tour, visiting the Viceregal
+                                        Lodge and the beautiful gardens.</p>
+                                    <p><strong>Afternoon:</strong> Explore Jakhoo Hill, known for its temple and stunning views of the city.
+                                        Have lunch at a café near the hill.</p>
+                                    <p><strong>Evening:</strong> Relax at your hotel or take a walk along the Ridge for scenic views and a
+                                        peaceful atmosphere.</p>
+                                    <p class="meal"><strong>Dinner:</strong> Enjoy your final dinner in Shimla at a traditional Himachali
+                                        restaurant.</p>
+                                </div>
+                            </div>
+                        
+                            <div class="timeline-item">
+                                <div class="timeline-circle">4</div>
+                                <div class="timeline-content">
+                                    <h2 class="plantext">Day 4: Departure</h2>
+                                    <p><strong>Morning:</strong> Breakfast at the hotel. Enjoy a final stroll around Mall Road for any
+                                        last-minute shopping.</p>
+                                    <p><strong>Afternoon:</strong> Check out from the hotel. Transfer to Shimla Airport or the bus station for
+                                        your departure.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="w-100"></div>
+                        
+                        <h2 class="plantext">Additional Recommendations:</h2>
+                        <p><strong>Travel Tips:</strong> Best time to visit Shimla: March to June for pleasant weather and September to February
+                            for snow. Dress code: Layered clothing is essential due to varying temperatures. Don't forget sunscreen, sunglasses,
+                            and comfortable walking shoes.</p>
+                        <p><strong>Activities:</strong> Explore local markets for unique handicrafts. Engage in adventure sports like
+                            paragliding or skiing (in winter). Visit nearby villages for a taste of rural Himachali life.</p>
+                        <p><strong>Cultural Insights:</strong> Visit ancient temples and churches to appreciate Shimla's rich cultural heritage.
+                            Engage with locals to learn about their traditions and lifestyle.</p>
+                            
+                        <!--end here-->
+                    </div>
+
+
+                    <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
+                        <div class="location-section">
+                            <!--start here -->
+                        <h1>Explore Shimla</h1>
+                        
+                        <div class="map">
+                            <h2>Our Location</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d351036.1661507497!2d77.21672106725006!3d31.104810533953703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3908c4c7ef800b3d%3A0x41c5f1c7eb2fcb8f!2sShimla%2C%20Himachal%20Pradesh%2C%20India!5e0!3m2!1sen!2sus!4v1636799394875!5m2!1sen!2sus"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        
+                        <div class="attractions backtext">
+                            <h2>Nearby Attractions</h2>
+                            <ul>
+                                <li><strong>Viceregal Lodge:</strong> A historic building showcasing British architecture and beautiful gardens.
+                                </li>
+                                <li><strong>Kufri:</strong> A popular hill station known for its panoramic views and adventure activities.</li>
+                                <li><strong>Jakhoo Temple:</strong> An ancient temple dedicated to Lord Hanuman, located atop Jakhoo Hill.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="activities backtext">
+                            <h2>Local Activities</h2>
+                            <p>Engage in various activities like:</p>
+                            <ul>
+                                <li>Horse Riding in Kufri for an adventurous experience.</li>
+                                <li>Trekking through lush forests to nearby hills.</li>
+                                <li>Ice Skating at the Shimla Ice Skating Rink during winter.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="transportation backtext">
+                            <h2>Getting Here</h2>
+                            <p>Nearest Airport: Shimla Airport (22 km away)</p>
+                            <p>Local Transport: Taxis, Auto-rickshaws, and Bike Rentals available for exploring the city.</p>
+                        </div>
+                        
+                        <div class="local-cuisine backtext">
+                            <h2>Local Cuisine</h2>
+                            <p>Don't miss out on these Himachali dishes:</p>
+                            <ul>
+                                <li><strong>Chana Madra:</strong> A delicious chickpea curry cooked in yogurt and spices.</li>
+                                <li><strong>Dham:</strong> A traditional rice dish prepared with lentils and spices, often served during
+                                    festivals.</li>
+                                <li><strong>Sidu:</strong> A steamed bread made of wheat flour, often served with ghee and chutney.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="visitor-tips backtext">
+                            <h2>Visitor Tips</h2>
+                            <p>For an enjoyable experience, remember to:</p>
+                            <ul>
+                                <li>Dress warmly as temperatures can drop, especially in winter.</li>
+                                <li>Respect local customs and the natural environment.</li>
+                                <li>Try to book accommodations in advance during peak tourist seasons.</li>
+                            </ul>
+                        </div>
+
+                            <!--end here-->
+                        </div>
+                    </div>
+
+                    <!--gallery tab start here -->
+                    <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
+                        <div class="container my-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>Gallery</h3>
+                                    <div class="row galleryimg">
+                                        <div class="col-4 ">
+                                            <img src="./images/fgoa.jpg" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/goa1.jpg" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/ftungnath.jpg" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/fgoa.jpg" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/goa1.jpg" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/ftungnath.jpg" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/fgoa.jpg" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/goa1.jpg" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/ftungnath.jpg" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/fgoa.jpg" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/goa1.jpg" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/ftungnath.jpg" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/fgoa.jpg" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/goa1.jpg" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/ftungnath.jpg" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/fgoa.jpg" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/goa1.jpg" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/ftungnath.jpg" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/fgoa.jpg" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/goa1.jpg" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/ftungnath.jpg" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/fgoa.jpg" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/goa1.jpg" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="./images/ftungnath.jpg" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Modal to display zoomed image -->
+                        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="imageModalLabel">Zoomed Image</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img id="modalImage" src="" alt="Zoomed Image" class="modal-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!--gallery tab end here-->
+
+                    <!--review part start here -->
+
+                    <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                        <p>Customer reviews will be shown here.</p>
+                    </div>
+                    <!--review section end here-->
+                </div>
+            </div>
+            <!--book now section start here-->
+
+            <div class="col-lg-4 mt-4 mt-lg-0 book-now-section">
+                <div class="p-4 book-now-section  rounded shadow">
+                    <h3 class="textcolor text-center" style="font-size:30px">BOOK THIS TOUR</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" class="form-control" id="name" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirm-email" class="form-label">Confirm Email *</label>
+                            <input type="email" class="form-control" id="confirm-email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="tickets" class="form-label">Number of tickets *</label>
+                            <input type="number" class="form-control" id="tickets" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message"></textarea>
+                        </div>
+                        <button class="btn btn-primary w-100 mb-2" type="submit">Check Availability</button>
+                        <button class="btn btn-success w-100" type="submit">BOOK NOW</button>
+                    </form>
+                </div>
+            </div>
+            <!--book now section end here -->
+        </div>
+    </div>
+    <!--tab section end here -->
+    <script>
+        // Add event listener for tab changes
+        document.querySelectorAll('.nav-link').forEach(function (tabButton) {
+            tabButton.addEventListener('shown.bs.tab', function () {
+                // Scroll the tab content container to the top
+                document.querySelector('.tab-content').scrollTop = 0;
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.img-clickable').forEach(image => {
+            image.addEventListener('click', function () {
+                // Get the source of the clicked image
+                const imgSrc = this.getAttribute('src');
+                // Update the modal image source with the clicked image source
+                document.getElementById('modalImage').setAttribute('src', imgSrc);
+            });
+        });
+    </script>
+
+
+
+    <!--footer part start from here -->
+
+
+
+
+
+    <div class=" mt-5 footer-section1">
+        <h1 class="font-weight-bold" style="color: white;">It’s Time For a New Adventure! Don’t Wait Any Longer. Contact
+            us!
+            <button class="btn btn-primary my-3">BOOK DESTINATION</button>
+        </h1>
+        <div class="w-100"></div>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="./images/newlogo.png" class="logoo" alt=""
+                    style="width: 262px;aspect-ratio: 4 / 1;height:auto;border:none">
+                <p></p>
+                <p><a href="+919569938191" style="text-decoration: none; color:white;">📞 +91 9569938191</a></p>
+                <p>📍 184 Main Street West Victoria 8007</p>
+                <p>🕒 Mon - Sat 8.00 - 18.00 &nbsp;&nbsp; Sunday CLOSED</p>
+            </div>
+
+            <div class="col-md-4">
+                <h2 style="color: white;">Latest News</h2>
+                <ul class="list-unstyled">
+                    <li>Water & Rocks: Discovering the Beauty of New Zealand
+                    </li>
+                    <li>Updates: People Who Work Overseas and Fly For Free
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h2 style="color: white;">Gallery</h2>
+                <div class="row gallery footerimage">
+                    <div class="col ">
+                        <img src="./images/fgoa.jpg" alt="Gallery Image 1" class="img-fluid" data-toggle="modal"
+                            data-target="#imageModal1" />
+                    </div>
+                    <div class="col">
+                        <img src="./images/goa1.jpg" alt="Gallery Image 2" class="img-fluid" data-toggle="modal"
+                            data-target="#imageModal2" />
+                    </div>
+                    <div class="col">
+                        <img src="./images/goa3.jpeg" alt="Gallery Image 3" class="img-fluid" data-toggle="modal"
+                            data-target="#imageModal3" />
+                    </div>
+                    <div class="col">
+                        <img src="./images/fgoa.jpg" alt="Gallery Image 4" class="img-fluid" data-toggle="modal"
+                            data-target="#imageModal4" />
+                    </div>
+
+                </div>
+
+                <div class="row gallery footerimage">
+                    <div class="col ">
+                        <img src="./images/fgoa.jpg" alt="Gallery Image 1" class="img-fluid" data-toggle="modal"
+                            data-target="#imageModal1" />
+                    </div>
+                    <div class="col">
+                        <img src="./images/goa1.jpg" alt="Gallery Image 2" class="img-fluid" data-toggle="modal"
+                            data-target="#imageModal2" />
+                    </div>
+                    <div class="col">
+                        <img src="./images/goa3.jpeg" alt="Gallery Image 3" class="img-fluid" data-toggle="modal"
+                            data-target="#imageModal3" />
+                    </div>
+                    <div class="col">
+                        <img src="./images/fgoa.jpg" alt="Gallery Image 4" class="img-fluid" data-toggle="modal"
+                            data-target="#imageModal4" />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <h2 style="color: white;">Follow Us</h2>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-4">
+        <p>© 2024 Trek the भारत, All Rights Reserved</p>
+    </footer>
+
+    <!-- Image Modals -->
+    <div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel1"></h5>
+                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./images/fgoa.jpg" alt="Gallery Image 1" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel2"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel2">Gallery Image 2</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./images/goa1.jpg" alt="Gallery Image 2" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal3" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel3"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel3">Gallery Image 3</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./images/goa3.jpeg" alt="Gallery Image 3" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal4" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel4"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel4">Gallery Image 4</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="./images/fgoa.jpg" alt="Gallery Image 4" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--footer parts end here -->
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Design with Connecting Line</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            padding: 40px;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            position: relative;
+            margin-left: 60px;
+            padding-left: 35px;
+            /* Extra space for the vertical line */
+        }
+
+        /* Vertical line for the timeline */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 60px;
+            /* Align with the circle center */
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #ddd;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        /* Circle styling */
+        .timeline-circle {
+            width: 50px;
+            height: 50px;
+            background-color: #125f5f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: bold;
+            margin-right: 20px;
+            border: 15px dashed #4fbdbd;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-content h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            
+        }
+
+        .timeline-content p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+           
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .timeline-content ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+            color: #4CAF50;
+        }
+
+        .timeline-content ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-circle">1</div>
+            <div class="timeline-content">
+                <h2>Day 1: Arrival in Goa</h2>
+                <p><strong>Morning:</strong> Arrive at Goa’s Dabolim Airport. Transfer to your
+                    hotel/resort near the beach.</p>
+                <p><strong>Afternoon:</strong> Enjoy a leisurely lunch at a beach shack. Recommended:
+                    Fisherman’s Wharf or
+                    Mickey’s Beach Shack.</p>
+                <p><strong>Evening:</strong> Relax at Calangute Beach or Baga Beach. Experience water
+                    sports like parasailing,
+                    jet skiing, or banana boat rides.</p>
+                <p class="meal"><strong>Dinner:</strong> Savor Goan cuisine at Vinayak Family
+                    Restaurant.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-circle">2</div>
+            <div class="timeline-content">
+                <h2>Day 2: North Goa Exploration</h2>
+                <p><strong>Morning:</strong> Breakfast at the hotel. Visit Anjuna Beach and explore the
+                    famous Anjuna Flea
+                    Market (Wednesday).</p>
+                <p><strong>Afternoon:</strong> Lunch at Artjuna Café or Cafe Lilliput. Head to Vagator
+                    Beach for stunning views
+                    from the cliffs.</p>
+                <p><strong>Evening:</strong> Visit Fort Chapora for a sunset view. Relax at Morjim
+                    Beach, known for its serene
+                    environment.</p>
+                <p class="meal"><strong>Dinner:</strong> Dine at Thalassa, known for its Greek cuisine.
+                </p>
+            </div>
+        </div>
+
+        <!-- Additional days can be added here -->
+        <div class="timeline-item">
+            <div class="timeline-circle">3</div>
+            <div class="timeline-content">
+                <h2>Day 3: Adventure and Relaxation</h2>
+                <p><strong>Morning:</strong> Breakfast at the hotel. Spend the day at Candolim Beach for
+                    a more relaxed vibe.
+                </p>
+                <p><strong>Afternoon:</strong> Enjoy beach activities like parasailing or windsurfing.
+                    Lunch at a beachfront
+                    restaurant.</p>
+                <p><strong>Evening:</strong> Head to Sinquerim Beach for a quieter evening. Visit Aguada
+                    Fort for historical
+                    exploration.</p>
+                <p class="meal"><strong>Dinner:</strong> Enjoy seafood at Gunpowder.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-circle">4</div>
+            <div class="timeline-content">
+                <h2>Day 4: South Goa Serenity</h2>
+                <p><strong>Morning:</strong> Early breakfast, then check out from the hotel. Drive to
+                    South Goa (approx. 1-2
+                    hours).</p>
+                <p><strong>Afternoon:</strong> Visit Palolem Beach or Agonda Beach for relaxation. Try
+                    kayaking or just unwind
+                    on the beach.</p>
+                <p><strong>Evening:</strong> Visit Butterfly Beach for its secluded beauty (accessible
+                    by boat).</p>
+                <p class="meal"><strong>Dinner:</strong> Dine at The Fisherman’s Wharf in Cavelossim.
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-circle">5</div>
+            <div class="timeline-content">
+                <h2>Day 5: Departure</h2>
+                <p><strong>Morning:</strong> Breakfast at the hotel. Take a morning stroll at Colva
+                    Beach or enjoy last-minute
+                    shopping.</p>
+                <p><strong>Afternoon:</strong> Check out from the hotel. Transfer to Dabolim Airport for
+                    departure.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Additional Recommendations:</h2>
+    <p><strong>Travel Tips:</strong> Best time to visit Goa: November to February. Dress code:
+        Light, breathable
+        clothing, swimwear, and flip-flops. Don't forget sunscreen, sunglasses, and hats for sun
+        protection.</p>
+    <p><strong>Activities:</strong> Yoga and Wellness: Join a yoga class on the beach. Local
+        Markets: Explore local
+        markets for souvenirs and handicrafts. Nightlife: Experience Goa’s vibrant nightlife at
+        clubs like Titos or Club
+        Cubana.</p>
+    <p><strong>Cultural Insights:</strong> Visit local churches like Basilica of Bom Jesus and
+        Se Cathedral for
+        historical and architectural appreciation.</p>
+
+</body>
+
+</html>
