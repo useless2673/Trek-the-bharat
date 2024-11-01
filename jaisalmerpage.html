@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="first.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.min.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>
@@ -528,7 +529,23 @@
             <div class="col-lg-4 mt-4 mt-lg-0 book-now-section">
                 <div class="p-4 book-now-section  rounded shadow">
                     <h3 class="textcolor text-center" style="font-size:30px">BOOK THIS TOUR</h3>
-                    <form>
+                    <form id="booking-form" action="https://formsubmit.co/{your-email@example.com}" method="POST">
+                        <!-- FormSubmit hidden fields -->
+                        <input type="hidden" name="_subject" value="Your Tour Booking Confirmation">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+            
+                        <!-- Hidden fields for dynamic email content -->
+                        <input type="hidden" id="user-email" name="_replyto">
+                        <input type="hidden" id="user-name" name="Name">
+                        <input type="hidden" id="ticket-count" name="Tickets">
+                        <input type="hidden" id="transaction-id" name="Transaction_ID">
+                        <input type="hidden" id="destination" name="Destination" value="Varanasi">
+                        <input type="hidden" id="total-amount" name="Total_Amount">
+                        <input type="hidden" id="tour-start-date" name="Tour_Start_Date">
+                        <input type="hidden" id="tour-end-date" name="Tour_End_Date">
+            
+                        <!-- User Input Fields -->
                         <div class="mb-3">
                             <label for="name" class="form-label">Name *</label>
                             <input type="text" class="form-control" id="name" required />
@@ -547,20 +564,105 @@
                         </div>
                         <div class="mb-3">
                             <label for="tickets" class="form-label">Number of tickets *</label>
-                            <input type="number" class="form-control" id="tickets" required />
+                            <input type="number" class="form-control" id="tickets" required min="1" />
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
                             <textarea class="form-control" id="message"></textarea>
                         </div>
-                        <button class="btn btn-primary w-100 mb-2" type="submit">Check Availability</button>
-                        <button class="btn btn-success w-100" type="submit">BOOK NOW</button>
+                        <button class="btn btn-primary w-100 mb-2" type="button" onclick="checkAvailability()">Check
+                            Availability</button>
+                        <button class="btn btn-success w-100" type="button" onclick="bookNow()">BOOK NOW</button>
                     </form>
                 </div>
             </div>
             <!--book now section end here -->
-        </div>
-    </div>
+            </div>
+            </div>
+            <!--book now section end here -->
+            <script>
+                function checkAvailability() {
+                    alert("Checking availability...");
+                }
+
+                function isValidEmail(email) {
+                    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return re.test(String(email).toLowerCase());
+                }
+
+                function bookNow() {
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const confirmEmail = document.getElementById('confirm-email').value;
+                    const tickets = document.getElementById('tickets').value;
+
+                    if (!name || !email || !confirmEmail || !tickets) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    if (email !== confirmEmail) {
+                        alert("Email and Confirm Email don't match.");
+                        return;
+                    }
+                    if (!isValidEmail(email)) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+
+                    const ticketPrice = 500;
+                    const totalAmount = tickets * ticketPrice;
+
+                    // Capture tour dates for the example
+                    const tourStartDate = "2024-11-15";  // Replace with dynamic date if needed
+                    const tourEndDate = "2024-11-20";    // Replace with dynamic date if needed
+
+                    processPayment(totalAmount, tickets, name, email, tourStartDate, tourEndDate);
+                }
+
+                function processPayment(amount, ticketCount, userName, userEmail, tourStartDate, tourEndDate) {
+                    var options = {
+                        "key": "rzp_test_Mwp192nnQ8RNt5", // Replace with your Razorpay key ID
+                        "amount": amount * 100, // Amount is in paise
+                        "currency": "INR",
+                        "name": "Your Travel Site",
+                        "description": "Booking Payment",
+                        "image": "https://your-logo-url.com/logo.png",
+                        "handler": function (response) {
+                            alert("Thank you! Your payment was successfully received.");
+
+                            // Populate hidden fields with user data for email
+                            document.getElementById('user-email').value = userEmail;
+                            document.getElementById('user-name').value = userName;
+                            document.getElementById('ticket-count').value = ticketCount;
+                            document.getElementById('transaction-id').value = response.razorpay_payment_id;
+
+                            // Populate new fields
+                            document.getElementById('total-amount').value = `INR ${amount}`;
+                            document.getElementById('tour-start-date').value = tourStartDate;
+                            document.getElementById('tour-end-date').value = tourEndDate;
+
+                            // Update form action to send to the user's email
+                            document.getElementById('booking-form').action = `https://formsubmit.co/${userEmail}`;
+
+                            // Submit form to FormSubmit to send confirmation email
+                            document.getElementById('booking-form').submit();
+                        },
+                        "modal": {
+                            "ondismiss": function () {
+                                alert('Payment process has been canceled.');
+                            }
+                        }
+                    };
+
+                    var rzp = new Razorpay(options);
+                    rzp.open();
+
+                    rzp.on('payment.failed', function (response) {
+                        alert('Payment failed: ' + response.error.description);
+                    });
+                }
+            </script>
+
     <!--tab section end here -->
     <script>
         // Add event listener for tab changes
