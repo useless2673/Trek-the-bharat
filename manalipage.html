@@ -11,6 +11,7 @@
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="first.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>
     <link rel="stylesheet" href="firstpage.css">
     <script src="jquery.js"></script>
@@ -31,7 +32,6 @@
         <div class="collapse navbar-collapse nav1 justify-content-center d-lg-block" id="demo">
             <a class="nav-link " href="index.html">Home</a>
             <a class="nav-link" href="index.html">About Us</a>
-            <a class="nav-link" href="index.html">Gallery</a>
             <div class="nav-link tre" href="index.html">Trek
 
                 <div class="profile1 ">
@@ -61,29 +61,14 @@
                 </div>
             </div>
             <a class="nav-link" href="index.html">Contact Us</a>
-            <div data-bs-toggle="tooltip" data-bs-placement="top" title="Login"><img class=" img-fluid d-lg-block log"
-                    style="max-width: 100%;"
-                    src="https://pic.onlinewebfonts.com/thumbnails/animations_258083.svg?width=12" alt="">
-                <div class="profile ">
-                    <box-icon type='solid' name='right-arrow-circle'></box-icon><span
-                        style="font-weight: bold;font-size:16px;color:rgb(27, 26, 26)"><a href="loginpage.html">login or
-                            sign
-                            up?</a></span>
-                    <br>
-                    <hr>
-                    <box-icon name='sun' type='solid'></box-icon><span
-                        style="font-weight: bold;font-size:16px;color:rgb(27, 26, 26);display:inline">Appearance</span>
-                    <br>
-                    <button type="button" id="dbutton">dark</button>
-                    <button type="button" id="lbutton">light</button>
-                    <br>
-                    <br>
-                    <hr>
-                    <div id="gtrans"></div>
-                </div>
+
+            </div>
+            <div class="toggle-container">
+                <button id="toggleButton" class="toggle-button">
+                    <i class="fas fa-moon" id="icon"></i> <!-- Initial icon as moon for light mode -->
+                </button>
             </div>
 
-        </div>
     </nav>
     <!--nav bar end here-->
     <script src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>

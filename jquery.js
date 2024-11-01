@@ -22,27 +22,25 @@ $(document).ready(function () {
   $(".tre,.profile1").mouseleave(function () {
     $(".profile1").css("display", "none");
   });
+ $(document).ready(function () {
+    const toggleButton = document.getElementById('toggleButton');
+    const icon = document.getElementById('icon');
 
- $(document).ready(function() {
     // Check for saved theme in local storage and apply it
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      applyTheme(savedTheme);
-    }
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(savedTheme);
 
-    $("#dbutton").click(function () {
-      applyTheme('dark'); // Save the theme to local storage
-      localStorage.setItem('theme', 'dark'); // Save the selected theme
-    });
-
-    $("#lbutton").click(function () {
-      applyTheme('light'); // Save the theme to local storage
-      localStorage.setItem('theme', 'light'); // Save the selected theme
+    // Toggle theme on button click
+    toggleButton.addEventListener('click', () => {
+      const currentTheme = $("body").hasClass('dark-mode') ? 'light' : 'dark';
+      applyTheme(currentTheme);
+      localStorage.setItem('theme', currentTheme);
     });
 
     // Function to apply theme
     function applyTheme(theme) {
       if (theme === 'dark') {
+        $("body").addClass('dark-mode');
         $("body").css("color", "white");
         $("body").css("background-color", "rgb(44,44,42)");
         $(".nav-link").css("color", "white");
@@ -57,13 +55,19 @@ $(document).ready(function () {
         $(".timeline-content").css("color", "rgb(249,249,249)");
         $(".plantext").css("color", "rgb(249,249,249)");
         $(".logoo").css("filter", "invert(1) brightness(1.2)");
+
+        // Set icon to sun for dark mode
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        icon.style.color = '#FFD700';
       } else {
+        $("body").removeClass('dark-mode');
         $("body").css("color", "black");
         $("body").css("background-color", "rgb(249,249,249)");
-        $(".nav-link").css("color", "transparent"); // Changed from transparent to black
+        $(".nav-link").css("color", "transparent"); // Change to black
         $(".navbar").css("background", "white");
         $(".log").attr("src", "https://pic.onlinewebfonts.com/thumbnails/animations_258083.svg?width=12");
-        $(".textcolor").css("color", "transparent"); // Changed from transparent to black
+        $(".textcolor").css("color", "transparent"); // Change to black
         $(".second-custom-carousel-card").css("background", "rgb(249,249,249)");
         $(".book-now-section").css("color", "rgb(44,44,42)");
         $(".book-now-section").css("background-color", "rgb(249,249,249)");
@@ -71,9 +75,15 @@ $(document).ready(function () {
         $(".plantext").css("color", "rgb(44,44,42)");
         $(".logoo").css("filter", "none");
         $(".nav-tabs").css("background-color", "white");
+
+        // Set icon to moon for light mode
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        icon.style.color = 'black';
       }
     }
-  });
+});
+
 });
 $(document).ready(function () {
   $("body").click(function () {

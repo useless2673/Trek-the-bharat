@@ -12,7 +12,7 @@ body {
   width: 262px;
   aspect-ratio: 4/1;
   filter: none;
-   transition: filter 0.5s ease;
+  transition: filter 0.5s ease;
 }
 
 .nav-link,
@@ -154,7 +154,41 @@ input::placeholder {
   text-decoration: none;
   color: #111;
 }
+.dark-mode {
+  background-color: #333;
+  /* Dark mode background */
+  color: #f4f4f4;
+  /* Dark mode text color */
+}
 
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.toggle-button {
+  background: none;
+  /* No background color */
+  border: none;
+  /* No border */
+  font-size: 32px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.toggle-button:hover {
+  transform: scale(1.1);
+  /* Slight scale effect on hover */
+}
+
+.fa-sun {
+  color: darkyellow;
+}
+
+.fa-moon {
+  color: black;
+}
 #dbutton {
   margin: 10px 0px 0px 35px;
   width: 50px;
@@ -332,11 +366,9 @@ input::placeholder {
   width: 24px;
   height: 24px;
 }
-.galleryimg img{
-
-  height:200px;
+.galleryimg img {
+  height: 200px;
   padding: 5px;
-  
 }
 
 .second-custom-carousel {
@@ -602,14 +634,13 @@ h2 {
 .visitor-tips {
   margin-bottom: 20px;
   padding: 15px;
-  
+
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.backtext{
+.backtext {
   background-color: rgb(249, 249, 249);
-  color: rgb(44,44,42);
-
+  color: rgb(44, 44, 42);
 }
 
 ul {
@@ -714,8 +745,8 @@ footer p {
   position: relative;
   z-index: 1;
 }
-.timeline-content{
-   color: #333;
+.timeline-content {
+  color: #333;
 }
 .timeline-content h2 {
   margin-bottom: 10px;
@@ -725,7 +756,6 @@ footer p {
 .timeline-content p {
   margin-bottom: 15px;
   line-height: 1.6;
-  
 }
 
 .timeline-content ul {
@@ -747,6 +777,6 @@ footer p {
   color: #4caf50;
   font-weight: bold;
 }
-.plantext{
-  color:rgb(44,44,42);
+.plantext {
+  color: rgb(44, 44, 42);
 }
