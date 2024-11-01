@@ -539,142 +539,165 @@
                 </div>
             </div>
             <!--book now section start here-->
-            <div class="col-lg-4 mt-4 mt-lg-0 book-now-section">
-                <div class="p-4 book-now-section  rounded shadow">
-                    <h3 class="textcolor text-center" style="font-size:30px">BOOK THIS TOUR</h3>
-                    <form id="booking-form" action="https://formsubmit.co/{your-email@example.com}" method="POST">
-                        <!-- FormSubmit hidden fields -->
-                        <input type="hidden" name="_subject" value="Your Tour Booking Confirmation">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-            
-                        <!-- Hidden fields for dynamic email content -->
-                        <input type="hidden" id="user-email" name="_replyto">
-                        <input type="hidden" id="user-name" name="Name">
-                        <input type="hidden" id="ticket-count" name="Tickets">
-                        <input type="hidden" id="transaction-id" name="Transaction_ID">
-                        <input type="hidden" id="destination" name="Destination" value="Varanasi">
-                        <input type="hidden" id="total-amount" name="Total_Amount">
-                        <input type="hidden" id="tour-start-date" name="Tour_Start_Date">
-                        <input type="hidden" id="tour-end-date" name="Tour_End_Date">
-            
-                        <!-- User Input Fields -->
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name *</label>
-                            <input type="text" class="form-control" id="name" required />
+                    <div class="col-lg-4 mt-4 mt-lg-0 book-now-section">
+                        <div class="p-4 book-now-section rounded shadow">
+                            <h3 class="textcolor text-center" style="font-size:30px">BOOK THIS TOUR</h3>
+                            <form id="booking-form" action="https://formsubmit.co/{your-email@example.com}" method="POST">
+                                <!-- FormSubmit hidden fields -->
+                                <input type="hidden" name="_subject" value="Your Tour Booking Confirmation">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                    
+                                <!-- Hidden fields for dynamic email content -->
+                                <input type="hidden" id="user-email" name="_replyto">
+                                <input type="hidden" id="user-name" name="Name">
+                                <input type="hidden" id="ticket-count" name="Tickets">
+                                <input type="hidden" id="transaction-id" name="Transaction_ID">
+                                <input type="hidden" id="destination" name="Destination" value="Varanasi">
+                                <input type="hidden" id="total-amount" name="Total_Amount">
+                                <input type="hidden" id="tour-start-date" name="Tour_Start_Date">
+                                <input type="hidden" id="tour-end-date" name="Tour_End_Date">
+                    
+                                <!-- User Input Fields -->
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name *</label>
+                                    <input type="text" class="form-control" id="name" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirm-email" class="form-label">Confirm Email *</label>
+                                    <input type="email" class="form-control" id="confirm-email" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tickets" class="form-label">Number of tickets *</label>
+                                    <input type="number" class="form-control" id="tickets" required min="1" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message"></textarea>
+                                </div>
+                                <button class="btn btn-primary w-100 mb-2" type="button" onclick="checkAvailability()">Check
+                                    Availability</button>
+                                <button class="btn btn-success w-100" type="button" onclick="bookNow()">BOOK NOW</button>
+                            </form>
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" class="form-control" id="email" required />
-                        </div>
-                        <div class="mb-3">
-                            <label for="confirm-email" class="form-label">Confirm Email *</label>
-                            <input type="email" class="form-control" id="confirm-email" required />
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone</label>
-                            <input type="tel" class="form-control" id="phone" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="tickets" class="form-label">Number of tickets *</label>
-                            <input type="number" class="form-control" id="tickets" required min="1" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message"></textarea>
-                        </div>
-                        <button class="btn btn-primary w-100 mb-2" type="button" onclick="checkAvailability()">Check
-                            Availability</button>
-                        <button class="btn btn-success w-100" type="button" onclick="bookNow()">BOOK NOW</button>
-                    </form>
-                </div>
-            </div>
-            <!--book now section end here -->
-            </div>
-            </div>
-            <!--book now section end here -->
-            <script>
-                function checkAvailability() {
-                    alert("Checking availability...");
-                }
-
-                function isValidEmail(email) {
-                    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    return re.test(String(email).toLowerCase());
-                }
-
-                function bookNow() {
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const confirmEmail = document.getElementById('confirm-email').value;
-                    const tickets = document.getElementById('tickets').value;
-
-                    if (!name || !email || !confirmEmail || !tickets) {
-                        alert('Please fill in all required fields.');
-                        return;
-                    }
-                    if (email !== confirmEmail) {
-                        alert("Email and Confirm Email don't match.");
-                        return;
-                    }
-                    if (!isValidEmail(email)) {
-                        alert('Please enter a valid email address.');
-                        return;
-                    }
-
-                    const ticketPrice = 500;
-                    const totalAmount = tickets * ticketPrice;
-
-                    // Capture tour dates for the example
-                    const tourStartDate = "2024-11-15";  // Replace with dynamic date if needed
-                    const tourEndDate = "2024-11-20";    // Replace with dynamic date if needed
-
-                    processPayment(totalAmount, tickets, name, email, tourStartDate, tourEndDate);
-                }
-
-                function processPayment(amount, ticketCount, userName, userEmail, tourStartDate, tourEndDate) {
-                    var options = {
-                        "key": "rzp_test_Mwp192nnQ8RNt5", // Replace with your Razorpay key ID
-                        "amount": amount * 100, // Amount is in paise
-                        "currency": "INR",
-                        "name": "Your Travel Site",
-                        "description": "Booking Payment",
-                        "image": "https://your-logo-url.com/logo.png",
-                        "handler": function (response) {
-                            alert("Thank you! Your payment was successfully received.");
-
-                            // Populate hidden fields with user data for email
-                            document.getElementById('user-email').value = userEmail;
-                            document.getElementById('user-name').value = userName;
-                            document.getElementById('ticket-count').value = ticketCount;
-                            document.getElementById('transaction-id').value = response.razorpay_payment_id;
-
-                            // Populate new fields
-                            document.getElementById('total-amount').value = `INR ${amount}`;
-                            document.getElementById('tour-start-date').value = tourStartDate;
-                            document.getElementById('tour-end-date').value = tourEndDate;
-
-                            // Update form action to send to the user's email
-                            document.getElementById('booking-form').action = `https://formsubmit.co/${userEmail}`;
-
-                            // Submit form to FormSubmit to send confirmation email
-                            document.getElementById('booking-form').submit();
-                        },
-                        "modal": {
-                            "ondismiss": function () {
-                                alert('Payment process has been canceled.');
-                            }
+                    </div>
+                    <!--book now section end here -->
+                    </div>
+                    </div>
+                    <!--book now section end here -->
+                    
+                    <script>
+                        function checkAvailability() {
+                            alert("Checking availability...");
                         }
-                    };
 
-                    var rzp = new Razorpay(options);
-                    rzp.open();
+                        function isValidEmail(email) {
+                            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            return re.test(String(email).toLowerCase());
+                        }
 
-                    rzp.on('payment.failed', function (response) {
-                        alert('Payment failed: ' + response.error.description);
-                    });
-                }
-            </script>
+                        function bookNow() {
+                            const name = document.getElementById('name').value;
+                            const email = document.getElementById('email').value;
+                            const confirmEmail = document.getElementById('confirm-email').value;
+                            const tickets = document.getElementById('tickets').value;
+
+                            if (!name || !email || !confirmEmail || !tickets) {
+                                alert('Please fill in all required fields.');
+                                return;
+                            }
+                            if (email !== confirmEmail) {
+                                alert("Email and Confirm Email don't match.");
+                                return;
+                            }
+                            if (!isValidEmail(email)) {
+                                alert('Please enter a valid email address.');
+                                return;
+                            }
+
+                            const ticketPrice = 500;
+                            const totalAmount = tickets * ticketPrice;
+
+                            // Capture tour dates for the example
+                            const tourStartDate = "2024-11-15";  // Replace with dynamic date if needed
+                            const tourEndDate = "2024-11-20";    // Replace with dynamic date if needed
+
+                            processPayment(totalAmount, tickets, name, email, tourStartDate, tourEndDate);
+                        }
+
+                        function processPayment(amount, ticketCount, userName, userEmail, tourStartDate, tourEndDate) {
+                            var options = {
+                                "key": "rzp_test_Mwp192nnQ8RNt5", // Replace with your Razorpay key ID
+                                "amount": amount * 100, // Amount is in paise
+                                "currency": "INR",
+                                "name": "Your Travel Site",
+                                "description": "Booking Payment",
+                                "image": "https://your-logo-url.com/logo.png",
+                                "handler": function (response) {
+                                    alert("Thank you! Your payment was successfully received.");
+
+                                    // Populate hidden fields with user data for email
+                                    document.getElementById('user-email').value = userEmail;
+                                    document.getElementById('user-name').value = userName;
+                                    document.getElementById('ticket-count').value = ticketCount;
+                                    document.getElementById('transaction-id').value = response.razorpay_payment_id;
+
+                                    // Populate new fields
+                                    document.getElementById('total-amount').value = `INR ${amount}`;
+                                    document.getElementById('tour-start-date').value = tourStartDate;
+                                    document.getElementById('tour-end-date').value = tourEndDate;
+
+                                    sendConfirmationEmail(userEmail);
+                                },
+                                "modal": {
+                                    "ondismiss": function () {
+                                        alert('Payment process has been canceled.');
+                                    }
+                                }
+                            };
+
+                            var rzp = new Razorpay(options);
+                            rzp.open();
+
+                            rzp.on('payment.failed', function (response) {
+                                alert('Payment failed: ' + response.error.description);
+                            });
+                        }
+
+                        function sendConfirmationEmail(userEmail) {
+                            // Send the email using FormSubmit
+                            fetch(`https://formsubmit.co/${userEmail}`, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                },
+                                body: new URLSearchParams(new FormData(document.getElementById('booking-form'))).toString()
+                            })
+                                .then(response => {
+                                    if (response.ok) {
+                                        alert("Booking confirmation has been sent to your email.");
+
+                                        // Reset the form after successful email send
+                                        document.getElementById('booking-form').reset();
+                                    } else {
+                                        throw new Error("Email sending failed.");
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error("Error sending email:", error);
+                                    alert("There was an issue sending the confirmation email.");
+                                });
+                        }
+                    </script>
+
 
     <!--tab section end here -->
     <script>
@@ -704,172 +727,263 @@
 
 
 
-
-
-    <div class=" mt-5 footer-section1">
-        <h1 class="font-weight-bold" style="color: white;">It’s Time For a New Adventure! Don’t Wait Any Longer. Contact
-            us!
-            <button class="btn btn-primary my-3">BOOK DESTINATION</button>
-        </h1>
-        <div class="w-100"></div>
-        <div class="row">
-            <div class="col-md-4">
-                <img src="./images/newlogo.png" class="logoo" alt=""
-                    style="width: 262px;aspect-ratio: 4 / 1;height:auto;border:none">
-                <p></p>
-                <p><a href="+919569938191" style="text-decoration: none; color:white;">📞 +91 9569938191</a></p>
-                <p>📍 184 Main Street West Victoria 8007</p>
-                <p>🕒 Mon - Sat 8.00 - 18.00 &nbsp;&nbsp; Sunday CLOSED</p>
-            </div>
-
-            <div class="col-md-4">
-                <h2 style="color: white;">Latest News</h2>
-                <ul class="list-unstyled">
-                    <li>Water & Rocks: Discovering the Beauty of New Zealand
-                    </li>
-                    <li>Updates: People Who Work Overseas and Fly For Free
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-md-4">
-                <h2 style="color: white;">Gallery</h2>
-                <div class="row gallery footerimage">
-                    <div class="col ">
-                        <img src="./images/fgoa.jpg" alt="Gallery Image 1" class="img-fluid" data-toggle="modal"
-                            data-target="#imageModal1" />
-                    </div>
-                    <div class="col">
-                        <img src="./images/goa1.jpg" alt="Gallery Image 2" class="img-fluid" data-toggle="modal"
-                            data-target="#imageModal2" />
-                    </div>
-                    <div class="col">
-                        <img src="./images/goa3.jpeg" alt="Gallery Image 3" class="img-fluid" data-toggle="modal"
-                            data-target="#imageModal3" />
-                    </div>
-                    <div class="col">
-                        <img src="./images/fgoa.jpg" alt="Gallery Image 4" class="img-fluid" data-toggle="modal"
-                            data-target="#imageModal4" />
-                    </div>
-
-                </div>
-
-                <div class="row gallery footerimage">
-                    <div class="col ">
-                        <img src="./images/fgoa.jpg" alt="Gallery Image 1" class="img-fluid" data-toggle="modal"
-                            data-target="#imageModal1" />
-                    </div>
-                    <div class="col">
-                        <img src="./images/goa1.jpg" alt="Gallery Image 2" class="img-fluid" data-toggle="modal"
-                            data-target="#imageModal2" />
-                    </div>
-                    <div class="col">
-                        <img src="./images/goa3.jpeg" alt="Gallery Image 3" class="img-fluid" data-toggle="modal"
-                            data-target="#imageModal3" />
-                    </div>
-                    <div class="col">
-                        <img src="./images/fgoa.jpg" alt="Gallery Image 4" class="img-fluid" data-toggle="modal"
-                            data-target="#imageModal4" />
-                    </div>
-
-                </div>
-            </div>
+<div class=" mt-5 footer-section1">
+    <h1 class="font-weight-bold" style="color: white; margin-left:10px;">It’s Time For a New Adventure! Don’t Wait
+        Any Longer. Contact
+        us!
+        <button class="btn btn-primary my-3">BOOK DESTINATION</button>
+    </h1>
+    <div class="w-100"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="./images/newlogo.png" alt="" style="width: 262px;aspect-ratio: 4 / 1;height:auto;border:none">
+            <p></p>
+            <p><a href="+919569938191" style="text-decoration: none; color:white;">📞 +91 9569938191</a></p>
+            <p>📍 184 Main Street West Victoria 8007</p>
+            <p>🕒 Mon - Sat 8.00 - 18.00 &nbsp;&nbsp; Sunday CLOSED</p>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-md-4">
-                <h2 style="color: white;">Follow Us</h2>
+        <div class="col-md-4">
+            <h2 style="color: white;">Latest News</h2>
+            <ul class="list-unstyled">
+                <li>Water & Rocks: Discovering the Beauty of New Zealand
+                </li>
+                <li>Updates: People Who Work Overseas and Fly For Free
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-4">
+            <h2 style="color: white;">Gallery</h2>
+            <div class="row gallery footerimage">
+                <div class="col ">
+                    <img src="./images/vanarash8.jpg" alt="vanarash" class="img-fluid" data-toggle="modal"
+                        data-target="#imageModal1" />
+                </div>
+                <div class="col">
+                    <img src="./images/goa1.jpg" alt="goa" class="img-fluid" data-toggle="modal"
+                        data-target="#imageModal2" />
+                </div>
+                <div class="col">
+                    <img src="./images/shimla5.jpg" alt="shimla" class="img-fluid" data-toggle="modal"
+                        data-target="#imageModal3" />
+                </div>
+                <div class="col">
+                    <img src="./images/kedarnath4.jpg" alt="kedarnath" class="img-fluid" data-toggle="modal"
+                        data-target="#imageModal4" />
+                </div>
+
+            </div>
+
+            <div class="row gallery footerimage">
+                <div class="col ">
+                    <img src="./images/tungnathbanner.jpeg" alt="tungnath" class="img-fluid" data-toggle="modal"
+                        data-target="#imageModal5" />
+                </div>
+                <div class="col">
+                    <img src="./images/dayarabugyal3.jpg" alt="dayabugyal" class="img-fluid" data-toggle="modal"
+                        data-target="#imageModal6" />
+                </div>
+                <div class="col">
+                    <img src="./images/lehladhak2.jpg" alt="leh ladhak" class="img-fluid" data-toggle="modal"
+                        data-target="#imageModal7" />
+                </div>
+                <div class="col">
+                    <img src="./images/fsrinagar.jpg" alt="srinager" class="img-fluid" data-toggle="modal"
+                        data-target="#imageModal8" />
+                </div>
 
             </div>
         </div>
     </div>
 
-    <footer class="text-center mt-4">
-        <p>© 2024 Trek the भारत, All Rights Reserved</p>
-    </footer>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <h2 style="color: white;">Follow Us</h2>
 
-    <!-- Image Modals -->
-    <div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel1"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imageModalLabel1"></h5>
-                    <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="./images/fgoa.jpg" alt="Gallery Image 1" class="img-fluid" />
-                </div>
+        </div>
+    </div>
+</div>
+
+<footer class="text-center mt-4">
+    <p>© 2024 Trek the भारत, All Rights Reserved</p>
+</footer>
+
+<!-- Image Modals -->
+<div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel1"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel1">"Vanarasi Assi Ghat: Spiritual hub, vibrant rituals,
+                    serene Ganges view."</h5>
+                <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close"
+                    style="border: none;margin-left:110px;">
+                    <span aria-hidden="true"> &times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="./images/vanarash8.jpg" alt="vanarash" class="img-fluid" />
             </div>
         </div>
     </div>
+</div>
 
 
-    <div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel2"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imageModalLabel2">Gallery Image 2</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="./images/goa1.jpg" alt="Gallery Image 2" class="img-fluid" />
-                </div>
+<div class="modal fade" id="imageModal2" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel2"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel2">Sun-kissed, scenic, vibrant, serene, sandy, lively,
+                    tropical, adventurous, exotic, unforgettable.</h5>
+                <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close"
+                    style="border: none;margin-left:110px;">
+                    <span aria-hidden="true"> &times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="./images/goa1.jpg" alt="Goa" class="img-fluid" />
             </div>
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="imageModal3" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel3"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imageModalLabel3">Gallery Image 3</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="./images/goa3.jpeg" alt="Gallery Image 3" class="img-fluid" />
-                </div>
+<div class="modal fade" id="imageModal3" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel3"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel3">Snowy peaks, lush valleys, adventure sports, scenic
+                    beauty, temples, cozy stays.
+                </h5>
+                <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close"
+                    style="border: none;margin-left:110px;">
+                    <span aria-hidden="true"> &times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="./images/shimla5.jpg" alt="Gallery Image 3" class="img-fluid" />
             </div>
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="imageModal4" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel4"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imageModalLabel4">Gallery Image 4</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="./images/fgoa.jpg" alt="Gallery Image 4" class="img-fluid" />
-                </div>
+<div class="modal fade" id="imageModal4" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel4"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel4">Spiritual journey, majestic mountains, sacred temple,
+                    scenic trek, peaceful ambiance.</h5>
+                <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close"
+                    style="border: none;margin-left:110px;">
+                    <span aria-hidden="true"> &times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="./images/kedarnath4.jpg" alt="Gallery Image 4" class="img-fluid" />
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
+<div class="modal fade" id="imageModal5" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel5"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel3">Sacred temple, scenic trek, snow-capped peaks, peaceful,
+                    breathtaking views.
+                </h5>
+                <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close"
+                    style="border: none;margin-left:110px;">
+                    <span aria-hidden="true"> &times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="./images/tungnathbanner.jpeg" alt="Gallery Image 3" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="imageModal6" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel6"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel3">Snowy peaks, lush valleys, adventure sports, scenic
+                    beauty, temples, cozy stays.
+                </h5>
+                <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close"
+                    style="border: none;margin-left:110px;">
+                    <span aria-hidden="true"> &times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="./images/dayarabugyal3.jpg" alt="dayara bugyal" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="imageModal7" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel7"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel3">Stunning landscapes, high passes, monasteries, adventure
+                    sports, serene, rugged beauty.
+                </h5>
+                <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close"
+                    style="border: none;margin-left:110px;">
+                    <span aria-hidden="true"> &times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="./images/lehladhak2.jpg" alt="leh ladhak" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="imageModal8" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel8"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel3">Tranquil lakes, vibrant gardens, houseboats, snowy peaks,
+                    rich cultural heritage.
+                </h5>
+                <button type="button" class="close ml-auto" data-dismiss="modal" aria-label="Close"
+                    style="border: none;margin-left:110px;">
+                    <span aria-hidden="true"> &times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="./images/fsrinagar.jpg" alt="srinager" class="img-fluid" />
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!--footer parts end here -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 
 
-
-
-
-
+<!-- Start of ChatBot (www.chatbot.com) code -->
+<script>
+    window.__ow = window.__ow || {};
+    window.__ow.organizationId = "9b2bb949-27cd-4795-9e77-0c5002986af0";
+    window.__ow.template_id = "69216d0b-dd62-4e2d-b764-7e53ff7b55d8";
+    window.__ow.integration_name = "manual_settings";
+    window.__ow.product_name = "chatbot";
+    ; (function (n, t, c) { function i(n) { return e._h ? e._h.apply(null, n) : e._q.push(n) } var e = { _q: [], _h: null, _v: "2.0", on: function () { i(["on", c.call(arguments)]) }, once: function () { i(["once", c.call(arguments)]) }, off: function () { i(["off", c.call(arguments)]) }, get: function () { if (!e._h) throw new Error("[OpenWidget] You can't use getters before load."); return i(["get", c.call(arguments)]) }, call: function () { i(["call", c.call(arguments)]) }, init: function () { var n = t.createElement("script"); n.async = !0, n.type = "text/javascript", n.src = "https://cdn.openwidget.com/openwidget.js", t.head.appendChild(n) } }; !n.__ow.asyncInit && e.init(), n.OpenWidget = n.OpenWidget || e }(window, document, [].slice))
+</script>
+<noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/"
+        rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a
+        href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
+<!-- End of ChatBot code -->
 </body>
 
 </html>
