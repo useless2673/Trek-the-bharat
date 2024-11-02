@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse nav1 justify-content-center d-lg-block" id="demo">
             <a class="nav-link " href="index.html">Home</a>
             <a class="nav-link" href="index.html">About Us</a>
-            <div class="nav-link tre" href="index.html">Trek
+            <div class="nav-link tre"><a href="treks.html" style="text-decoration: none;color: inherit;">Trek</a>
 
                 <div class="profile1 ">
                     <div class="container-fluid ">
@@ -527,164 +527,174 @@
                 </div>
             </div>
             <!--book now section start here-->
-            <div class="col-lg-4 mt-4 mt-lg-0 book-now-section">
-                <div class="p-4 book-now-section rounded shadow">
-                    <h3 class="textcolor text-center" style="font-size:30px">BOOK THIS TOUR</h3>
-                    <form id="booking-form" action="https://formsubmit.co/{your-email@example.com}" method="POST">
-                        <!-- FormSubmit hidden fields -->
-                        <input type="hidden" name="_subject" value="Your Tour Booking Confirmation">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-            
-                        <!-- Hidden fields for dynamic email content -->
-                        <input type="hidden" id="user-email" name="_replyto">
-                        <input type="hidden" id="user-name" name="Name">
-                        <input type="hidden" id="ticket-count" name="Tickets">
-                        <input type="hidden" id="transaction-id" name="Transaction_ID">
-                        <input type="hidden" id="destination" name="Destination" value="Varanasi">
-                        <input type="hidden" id="total-amount" name="Total_Amount">
-                        <input type="hidden" id="tour-start-date" name="Tour_Start_Date">
-                        <input type="hidden" id="tour-end-date" name="Tour_End_Date">
-            
-                        <!-- User Input Fields -->
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name *</label>
-                            <input type="text" class="form-control" id="name" required />
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" class="form-control" id="email" required />
-                        </div>
-                        <div class="mb-3">
-                            <label for="confirm-email" class="form-label">Confirm Email *</label>
-                            <input type="email" class="form-control" id="confirm-email" required />
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone</label>
-                            <input type="tel" class="form-control" id="phone" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="tickets" class="form-label">Number of tickets *</label>
-                            <input type="number" class="form-control" id="tickets" required min="1" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message"></textarea>
-                        </div>
-                        <button class="btn btn-primary w-100 mb-2" type="button" onclick="checkAvailability()">Check
-                            Availability</button>
-                        <button class="btn btn-success w-100" type="button" onclick="bookNow()">BOOK NOW</button>
-                    </form>
+    <div class="col-lg-4 mt-4 mt-lg-0 book-now-section">
+        <div class="p-4 book-now-section rounded shadow">
+            <h3 class="textcolor text-center" style="font-size:30px">BOOK THIS TOUR</h3>
+            <form id="booking-form" action="https://formsubmit.co/{your-email@example.com}" method="POST">
+                <!-- FormSubmit hidden fields -->
+                <input type="hidden" name="_subject" value="Your Tour Booking Confirmation">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+        
+                <!-- Hidden fields for dynamic email content -->
+                <input type="hidden" id="user-email" name="_replyto">
+                <input type="hidden" id="user-name" name="Name">
+                <input type="hidden" id="ticket-count" name="Tickets">
+                <input type="hidden" id="transaction-id" name="Transaction_ID">
+                <input type="hidden" id="destination" name="Destination" value="Varanasi">
+                <input type="hidden" id="total-amount" name="Total_Amount">
+                <input type="hidden" id="tour-start-date" name="Tour_Start_Date">
+                <input type="hidden" id="tour-end-date" name="Tour_End_Date">
+        
+                <!-- User Input Fields -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name *</label>
+                    <input type="text" class="form-control" id="name" required />
                 </div>
-            </div>
-            <!--book now section end here -->
-            </div>
-            </div>
-            <!--book now section end here -->
-            
-            <script>
-                function checkAvailability() {
-                    alert("Checking availability...");
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" class="form-control" id="email" required />
+                </div>
+                <div class="mb-3">
+                    <label for="confirm-email" class="form-label">Confirm Email *</label>
+                    <input type="email" class="form-control" id="confirm-email" required />
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" />
+                </div>
+                <div class="mb-3">
+                    <label for="tickets" class="form-label">Number of tickets *</label>
+                    <input type="number" class="form-control" id="tickets" required min="1" />
+                </div>
+                <button class="btn btn-primary w-100 mb-2" type="button" onclick="checkAvailability()">Check
+                    Availability</button>
+                <button class="btn btn-success w-100" type="button" onclick="bookNow()">BOOK NOW</button>
+            </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        <script>
+            let availableSeats = Math.floor(Math.random() * (50 - 4 + 1)) + 4;
+            // Set the initial number of available seats
+
+            function checkAvailability() {
+                const ticketsRequested = parseInt(document.getElementById('tickets').value) || 0;
+
+                if (ticketsRequested > availableSeats) {
+                    alert(`Only ${availableSeats} seats are available. Please reduce the number of tickets.`);
+                } else {
+                    alert(`${availableSeats} seats are available.`);
+                }
+            }
+
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            function bookNow() {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const confirmEmail = document.getElementById('confirm-email').value;
+                const tickets = parseInt(document.getElementById('tickets').value) || 0;
+
+                if (!name || !email || !confirmEmail || tickets === 0) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                if (email !== confirmEmail) {
+                    alert("Email and Confirm Email don't match.");
+                    return;
+                }
+                if (!isValidEmail(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                if (tickets > availableSeats) {
+                    alert(`Only ${availableSeats} seats are available. Please reduce the number of tickets.`);
+                    return;
                 }
 
-                function isValidEmail(email) {
-                    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    return re.test(String(email).toLowerCase());
-                }
+                const ticketPrice = 6999;
+                const totalAmount = tickets * ticketPrice;
 
-                function bookNow() {
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const confirmEmail = document.getElementById('confirm-email').value;
-                    const tickets = document.getElementById('tickets').value;
+                // Capture tour dates for the example
+                const tourStartDate = "2024-11-15";
+                const tourEndDate = "2024-11-20";
 
-                    if (!name || !email || !confirmEmail || !tickets) {
-                        alert('Please fill in all required fields.');
-                        return;
-                    }
-                    if (email !== confirmEmail) {
-                        alert("Email and Confirm Email don't match.");
-                        return;
-                    }
-                    if (!isValidEmail(email)) {
-                        alert('Please enter a valid email address.');
-                        return;
-                    }
+                processPayment(totalAmount, tickets, name, email, tourStartDate, tourEndDate);
+            }
 
-                    const ticketPrice = 500;
-                    const totalAmount = tickets * ticketPrice;
+            function processPayment(amount, ticketCount, userName, userEmail, tourStartDate, tourEndDate) {
+                var options = {
+                    "key": "rzp_test_Mwp192nnQ8RNt5",
+                    "amount": amount * 100,
+                    "currency": "INR",
+                    "name": "Your Travel Site",
+                    "description": "Booking Payment",
+                    "image": "https://your-logo-url.com/logo.png",
+                    "handler": function (response) {
+                        alert("Thank you! Your payment was successfully received.");
 
-                    // Capture tour dates for the example
-                    const tourStartDate = "2024-11-15";  // Replace with dynamic date if needed
-                    const tourEndDate = "2024-11-20";    // Replace with dynamic date if needed
+                        // Update available seats
+                        availableSeats -= ticketCount;
 
-                    processPayment(totalAmount, tickets, name, email, tourStartDate, tourEndDate);
-                }
+                        // Populate hidden fields with user data for email
+                        document.getElementById('user-email').value = userEmail;
+                        document.getElementById('user-name').value = userName;
+                        document.getElementById('ticket-count').value = ticketCount;
+                        document.getElementById('transaction-id').value = response.razorpay_payment_id;
+                        document.getElementById('total-amount').value = `INR ${amount}`;
+                        document.getElementById('tour-start-date').value = tourStartDate;
+                        document.getElementById('tour-end-date').value = tourEndDate;
 
-                function processPayment(amount, ticketCount, userName, userEmail, tourStartDate, tourEndDate) {
-                    var options = {
-                        "key": "rzp_test_Mwp192nnQ8RNt5", // Replace with your Razorpay key ID
-                        "amount": amount * 100, // Amount is in paise
-                        "currency": "INR",
-                        "name": "Your Travel Site",
-                        "description": "Booking Payment",
-                        "image": "https://your-logo-url.com/logo.png",
-                        "handler": function (response) {
-                            alert("Thank you! Your payment was successfully received.");
-
-                            // Populate hidden fields with user data for email
-                            document.getElementById('user-email').value = userEmail;
-                            document.getElementById('user-name').value = userName;
-                            document.getElementById('ticket-count').value = ticketCount;
-                            document.getElementById('transaction-id').value = response.razorpay_payment_id;
-
-                            // Populate new fields
-                            document.getElementById('total-amount').value = `INR ${amount}`;
-                            document.getElementById('tour-start-date').value = tourStartDate;
-                            document.getElementById('tour-end-date').value = tourEndDate;
-
-                            sendConfirmationEmail(userEmail);
-                        },
-                        "modal": {
-                            "ondismiss": function () {
-                                alert('Payment process has been canceled.');
-                            }
+                        // Send emails
+                        sendConfirmationEmail(userEmail); // To the user
+                        sendConfirmationEmail("singhanki136@gmail.com"); // To admin
+                    },
+                    "modal": {
+                        "ondismiss": function () {
+                            alert('Payment process has been canceled.');
                         }
-                    };
+                    }
+                };
 
-                    var rzp = new Razorpay(options);
-                    rzp.open();
+                var rzp = new Razorpay(options);
+                rzp.open();
 
-                    rzp.on('payment.failed', function (response) {
-                        alert('Payment failed: ' + response.error.description);
-                    });
-                }
+                rzp.on('payment.failed', function (response) {
+                    alert('Payment failed: ' + response.error.description);
+                });
+            }
 
-                function sendConfirmationEmail(userEmail) {
-                    // Send the email using FormSubmit
-                    fetch(`https://formsubmit.co/${userEmail}`, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/x-www-form-urlencoded"
-                        },
-                        body: new URLSearchParams(new FormData(document.getElementById('booking-form'))).toString()
+            function sendConfirmationEmail(recipientEmail) {
+                fetch(`https://formsubmit.co/${recipientEmail}`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: new URLSearchParams(new FormData(document.getElementById('booking-form'))).toString()
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            alert("Booking confirmation has been sent to your email.");
+
+                            // Reset the form after successful email send
+                            document.getElementById('booking-form').reset();
+                        } else {
+                            throw new Error("Email sending failed.");
+                        }
                     })
-                        .then(response => {
-                            if (response.ok) {
-                                alert("Booking confirmation has been sent to your email.");
+                    .catch(error => {
+                        console.error("Error sending email:", error);
+                        alert("There was an issue sending the confirmation email.");
+                    });
+            }
+        </script>
 
-                                // Reset the form after successful email send
-                                document.getElementById('booking-form').reset();
-                            } else {
-                                throw new Error("Email sending failed.");
-                            }
-                        })
-                        .catch(error => {
-                            console.error("Error sending email:", error);
-                            alert("There was an issue sending the confirmation email.");
-                        });
-                }
-            </script>
 
     <!--tab section end here -->
     <script>
@@ -734,13 +744,37 @@
             <p>🕒 Mon - Sat 8.00 - 18.00 &nbsp;&nbsp; Sunday CLOSED</p>
         </div>
 
-        <div class="col-md-4">
-            <h2 style="color: white">Latest News</h2>
-            <ul class="list-unstyled">
-                <li>Water & Rocks: Discovering the Beauty of New Zealand</li>
-                <li>Updates: People Who Work Overseas and Fly For Free</li>
+    <div class="col-md-4">
+        <h2 style="color: white; text-align: center; margin-bottom: 20px;">Quick link</h2>
+        <div style="display: flex; justify-content: center; gap: 50px;">
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="manalipage.html" style="text-decoration: none; font-size: 20px; color: #FFFFFF;">Manali</a>
+                </li>
+                <li><a href="lehladhakpage.html" style="text-decoration: none; font-size: 20px; color: #FFFFFF;">Leh
+                        Ladhak</a>
+                </li>
+                <li><a href="vanarashpage.html" style="text-decoration: none; font-size: 20px; color: #FFFFFF;">Vanarasi</a>
+                </li>
+                <li><a href="dayarabugyalpage.html" style="text-decoration: none; font-size: 20px; color: #FFFFFF;">Dayara
+                        Bugyal</a></li>
+                <li><a href="shimlapage.html" style="text-decoration: none; font-size: 20px; color: #FFFFFF;">Shimla</a>
+                </li>
+            </ul>
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="srinagarpage.html" style="text-decoration: none; font-size: 20px; color: #FFFFFF;">Srinagar</a>
+                </li>
+                <li><a href="goapage.html" style="text-decoration: none; font-size: 20px; color: #FFFFFF;">Goa</a></li>
+                <li><a href="tungnathpage.html" style="text-decoration: none; font-size: 20px; color: #FFFFFF;">Tungnath</a>
+                </li>
+                <li><a href="kedarnathpage.html"
+                        style="text-decoration: none; font-size: 20px; color: #FFFFFF;">Kedarnath</a>
+                </li>
+                <li><a href="jaisalmerpage.html"
+                        style="text-decoration: none; font-size: 20px; color: #FFFFFF;">Jaisalmer</a>
+                </li>
             </ul>
         </div>
+    </div>
 
         <div class="col-md-4">
             <h2 style="color: white">Gallery</h2>

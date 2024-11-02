@@ -54,7 +54,7 @@ $(document).ready(function () {
         $(".second-custom-carousel-card").css("background", "rgb(44,44,42)");
         $(".timeline-content").css("color", "rgb(249,249,249)");
         $(".plantext").css("color", "rgb(249,249,249)");
-        $(".logoo").css("filter", "invert(1) brightness(1.2)");
+        // $(".logoo").css("filter", "invert(1) brightness(1.2)");
 
         // Set icon to sun for dark mode
         icon.classList.remove('fa-moon');
