@@ -135,38 +135,15 @@ input::placeholder {
   text-decoration: none;
   color: #334447;
 }
-
-.profile {
-  position: absolute;
-  width: 200px;
-  height: 300px;
-  border: 2px solid rgb(88, 93, 70);
-  margin-left: -100px;
-  display: none;
-  border-radius: 20px;
-  box-sizing: border-box;
-  padding: 20px;
-  background-image: url("https://img.freepik.com/free-photo/abstract-luxury-blur-grey-color-gradient-used-as-background-studio-wall-display-your-products_1258-54646.jpg?size=338&ext=jpg&ga=GA1.1.1700460183.1713398400&semt=ais");
-  background-position: center;
-}
-
-.profile a {
-  text-decoration: none;
-  color: #111;
-}
 .dark-mode {
   background-color: #333;
-  /* Dark mode background */
   color: #f4f4f4;
-  /* Dark mode text color */
 }
-
 .toggle-container {
   display: flex;
   align-items: center;
   margin-right: 30px;
 }
-
 .toggle-button {
   background: none;
   /* No background color */
