@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="first.js"></script>
+    <script src="first.js" defer></script>
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.min.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/chosen/1.1.0/chosen.jquery.min.js"></script>
     <link rel="stylesheet" href="firstpage.css">
@@ -369,56 +369,67 @@
                                     <h3>Gallery</h3>
                                     <div class="row galleryimg">
                                         <div class="col-4 ">
-                                            <img src="./images/shimla1.webp" alt="Image 1" class="img-thumbnail img-clickable"
-                                                data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="./images/shimla1.webp" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
                                         </div>
                                         <div class="col-4">
-                                            <img src="./images/shimla5.webp" alt="Image 2" class="img-thumbnail img-clickable"
-                                                data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="./images/shimla5.webp" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
                                         </div>
                                         <div class="col-4">
-                                            <img src="./images/shimla01-672731d20505e.webp" alt="Image 3" class="img-thumbnail img-clickable"
-                                                data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="./images/shimla01-672731d20505e.webp" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
                                         </div>
                                         <div class="col-4">
-                                            <img src="./images/shimla02-672731d0b7ee6.webp" alt="Image 1" class="img-thumbnail img-clickable"
-                                                data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="./images/shimla02-672731d0b7ee6.webp" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
                                         </div>
                                         <div class="col-4">
-                                            <img src="./images/shimla03-672731d858807.webp" alt="Image 2" class="img-thumbnail img-clickable"
-                                                data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="./images/shimla03-672731d858807.webp" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
                                         </div>
                                         <div class="col-4">
-                                            <img src="./images/shimla04-672731da7898c.webp" alt="Image 3" class="img-thumbnail img-clickable"
-                                                data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="./images/shimla04-672731da7898c.webp" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
                                         </div>
                                         <div class="col-4">
-                                            <img src="./images/shimla05-672731ddb1a89.webp" alt="Image 1" class="img-thumbnail img-clickable"
-                                                data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="./images/shimla05-672731ddb1a89.webp" alt="Image 1"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
                                         </div>
                                         <div class="col-4">
-                                            <img src="./images/shimla06-672731e1825cf.webp" alt="Image 2" class="img-thumbnail img-clickable"
-                                                data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="./images/shimla06-672731e1825cf.webp" alt="Image 2"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
                                         </div>
                                         <div class="col-4">
-                                            <img src="./images/shimla07-672731e1f3b52.webp" alt="Image 3" class="img-thumbnail img-clickable"
-                                                data-bs-toggle="modal" data-bs-target="#imageModal">
+                                            <img src="./images/shimla07-672731e1f3b52.webp" alt="Image 3"
+                                                class="img-thumbnail img-clickable" data-bs-toggle="modal"
+                                                data-bs-target="#imageModal">
                                         </div>
-                    
-                    
+
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    
-                    
+
+
                         <!-- Modal to display zoomed image -->
-                        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel"
+                            aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="imageModalLabel"></h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <img id="modalImage" src="" alt="Zoomed Image" class="modal-img">
@@ -426,8 +437,8 @@
                                 </div>
                             </div>
                         </div>
-                    
-                    
+
+
                     </div>
                     <!--gallery tab end here-->
 
